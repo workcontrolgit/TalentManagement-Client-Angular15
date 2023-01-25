@@ -1,0 +1,33 @@
+{
+  "generator-ngx-rocket": {
+    "version": "11.0.0",
+    "props": {
+      "location": "path",
+      "strict": true,
+      "skipInstall": false,
+      "skipQuickstart": false,
+      "initGit": true,
+      "usePrefix": true,
+      "appName": "AngularIdentityServer",
+      "target": ["web"],
+      "ui": "bootstrap",
+      "features": ["pwa", "auth", "lazy", "cypress", "angulartics"],
+      "languages": ["en-US"],
+      "analyticsProvider": "ga",
+      "googleAnalyticsAccount": "G-G7BYVD349P",
+      "tools": ["prettier", "hads"],
+      "utility": ["moment"],
+      "deploy": "github",
+      "projectName": "angular-14",
+      "packageManager": "npm",
+      "mobile": [],
+      "desktop": [],
+      "pwa": true,
+      "auth": true,
+      "lazy": true,
+      "e2e": false,
+      "cypress": true,
+      "angulartics": true
+    }
+  }
+}

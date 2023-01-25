@@ -1,0 +1,40 @@
+<mxfile host="app.diagrams.net" modified="2022-12-19T05:37:55.192Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/108.0.0.0 Safari/537.36" etag="jVhWMzv-ieM__b8GE1Ml" version="20.7.4" type="github">
+  <diagram id="3XDatcyc6wy93tU6hulC" name="Page-1">
+    <mxGraphModel dx="651" dy="383" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="37pLfj_rTRnMQBTY-xfp-8" value="Request JWT" style="edgeStyle=elbowEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="220" y="180.5" as="sourcePoint" />
+            <mxPoint x="310" y="181" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="jiVvN3G3H4Z4ttdR3sqs-1" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn0.iconfinder.com/data/icons/long-shadow-web-icons/512/angular-symbol-128.png;imageBorder=default;" parent="1" vertex="1">
+          <mxGeometry x="61" y="127" width="159" height="159" as="geometry" />
+        </mxCell>
+        <mxCell id="37pLfj_rTRnMQBTY-xfp-9" value="Issue JWT" style="edgeStyle=elbowEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.75;entryDx=0;entryDy=0;exitX=0;exitY=0.75;exitDx=0;exitDy=0;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="220" y="220.25" as="targetPoint" />
+            <mxPoint x="310" y="220.5" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="303" y="215" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="37pLfj_rTRnMQBTY-xfp-3" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=data:image/png,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;imageBorder=default;" vertex="1" parent="1">
+          <mxGeometry x="308" y="128" width="318.01" height="159" as="geometry" />
+        </mxCell>
+        <mxCell id="37pLfj_rTRnMQBTY-xfp-6" value="&lt;h1&gt;&lt;p class=&quot;graf graf--p&quot;&gt;angular-oauth2-oidc library&lt;br&gt;&lt;span style=&quot;background-color: initial; font-size: 12px; font-weight: normal;&quot;&gt;Handle the authentication flow&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;background-color: initial; font-size: 12px; font-weight: normal;&quot;&gt;Manage access tokens&lt;br&gt;Fetch user profile information&lt;/span&gt;&lt;/p&gt;&lt;/h1&gt;" style="text;html=1;strokeColor=none;fillColor=none;spacing=5;spacingTop=-20;whiteSpace=wrap;overflow=hidden;rounded=0;rotation=0;align=center;" vertex="1" parent="1">
+          <mxGeometry x="92" y="294" width="351" height="141" as="geometry" />
+        </mxCell>
+        <mxCell id="37pLfj_rTRnMQBTY-xfp-19" value="" style="shape=arrow;endArrow=classic;html=1;rounded=0;fillColor=#fff2cc;strokeColor=#d6b656;dashed=1;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="263" y="305" as="sourcePoint" />
+            <mxPoint x="263" y="242" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
