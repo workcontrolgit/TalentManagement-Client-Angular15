@@ -1,4 +1,4 @@
-# AngularIdentityServer
+# Talent Management
 
 Welcome to the project documentation!
 

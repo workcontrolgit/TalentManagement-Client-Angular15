@@ -1,0 +1,15 @@
+<div class="modal-header">
+  <h4 class="modal-title">{{ title }}</h4>
+  <button type="button" class="close" aria-label="Close" (click)="this.activeModal.dismiss()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <div class="alert alert-light" role="alert">
+    <p class=""><strong>Error Code:</strong> {{ status }}</p>
+    <p class="text-wrap text-break"><strong>Error Message: </strong> {{ message }}</p>
+  </div>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-primary" (click)="this.activeModal.dismiss()">Close</button>
+</div>

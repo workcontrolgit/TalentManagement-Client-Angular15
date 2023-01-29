@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 
 import { AuthService } from './auth.service';
-import { ToastService } from '@app/core/toast/toast.service';
+import { ToastService } from '@app/services/toast/toast.service';
 import { Logger } from '@app/core';
 
 //const log = new Logger('auth-guard.service');

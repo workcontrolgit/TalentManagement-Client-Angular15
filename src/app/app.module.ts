@@ -13,9 +13,10 @@ import { HomeModule } from './home/home.module';
 import { ShellModule } from './shell/shell.module';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
+import { ShouldLoginComponent } from './should-login.component';
 
 import { CoreModule } from '@app/core';
-import { ToastsContainer } from './core/toast/toasts-container.component';
+import { ToastsContainer } from './services/toast/toasts-container.component';
 
 @NgModule({
   imports: [
@@ -33,7 +34,7 @@ import { ToastsContainer } from './core/toast/toasts-container.component';
     ToastsContainer,
     AppRoutingModule, // must be imported as the last module as it contains the fallback route
   ],
-  declarations: [AppComponent],
+  declarations: [AppComponent, ShouldLoginComponent],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,

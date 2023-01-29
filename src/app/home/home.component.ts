@@ -2,7 +2,7 @@ import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { finalize } from 'rxjs/operators';
 
 import { QuoteService } from './quote.service';
-import { ToastService } from '@app/core/toast/toast.service';
+import { ToastService } from '@app/services/toast/toast.service';
 
 @Component({
   selector: 'app-home',

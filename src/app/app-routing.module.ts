@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 import { Shell } from '@app/shell/shell.service';
 import { AuthGuard } from '@app/core/auth/auth-guard.service';
+import { ShouldLoginComponent } from './should-login.component';
 
 const routes: Routes = [
   Shell.childRoutes([
@@ -16,7 +17,15 @@ const routes: Routes = [
       path: 'authorize',
       loadChildren: () => import('./features/authorize/authorize.module').then((m) => m.AuthorizeModule),
     },
+    {
+      path: 'position',
+      loadChildren: () => import('./features/position/position.module').then((m) => m.PositionModule),
+      //data: {role: 'Manager'},
+    },
+
   ]),
+  { path: 'should-login', component: ShouldLoginComponent },
+
   // Fallback when no prior route is matched
   { path: '**', redirectTo: '', pathMatch: 'full' },
 ];
