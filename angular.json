@@ -34,8 +34,15 @@
               "src/assets",
               "src/silent-refresh.html"
             ],
-            "styles": ["src/main.scss"],
-            "scripts": []
+            "styles": [
+              "src/main.scss",
+              "node_modules/datatables.net-bs5/css/dataTables.bootstrap5.min.css"
+            ],
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/datatables.net/js/jquery.dataTables.min.js",
+              "node_modules/datatables.net-bs5/js/dataTables.bootstrap5.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -103,7 +110,9 @@
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
             "scripts": [],
-            "styles": ["src/main.scss"],
+            "styles": [
+              "src/main.scss"
+            ],
             "assets": [
               "src/favicon.ico",
               "src/apple-touch-icon.png",
@@ -122,7 +131,10 @@
         "lint": {
           "builder": "@angular-eslint/builder:lint",
           "options": {
-            "lintFilePatterns": ["src/**/*.ts", "src/**/*.html"]
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
           }
         },
         "cypress-run": {
