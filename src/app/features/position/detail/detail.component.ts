@@ -8,7 +8,6 @@ import { Position } from '@shared/models/position';
 import { DataResponsePosition } from '@shared/classes/data-response-position';
 import { ConfirmationDialogService } from '@app/services/dialog/confirmation-dialog.service';
 import { RxwebValidators } from '@rxweb/reactive-form-validators';
-//import { ToastService } from '@app/services/dialog/toast.service';
 import { ErrorDialogService } from '@shared/errors/error-dialog.service';
 import { ToastService } from '@app/services/toast/toast.service';
 
