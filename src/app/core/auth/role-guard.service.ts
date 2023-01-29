@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router, Route } from '@angular/router';
 import { Observable } from 'rxjs';
 import { tap, map } from 'rxjs/operators';
-import { ToastService } from '@app/core/toast/toast.service';
+import { ToastService } from '@app/services/toast/toast.service';
 
 @Injectable()
 export class RoleGuard implements CanActivate {

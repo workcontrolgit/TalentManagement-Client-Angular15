@@ -16,7 +16,34 @@ export const environment = {
   serverUrl: 'https://api.chucknorris.io',
   defaultLanguage: 'en-US',
   supportedLanguages: ['en-US'],
+  apiEndpoint: 'https://localhost:44378/api/v1',
+  // apiEndpoint: 'https://cat-netcore-api.azurewebsites.net/api/v1',
+  apiMockEndpoint: 'https://angular-datatables-demo-server.herokuapp.com',
+  oidc: {
+    issuer: 'https://localhost:44310', // running on localhost
+    // issuer: 'https://cat-token-identity.azurewebsites.net', // demo identityserver in Azure
+    //issuer: 'https://mickleball-token-identity.azurewebsites.net', // identityserver in Azure
+    // issuer: 'https://demo.duendesoftware.com', // identityserver in Azure
+    // clientId: 'interactive.public', // client id setup in IdentityServer4
+    clientId: 'AngularStarterKit', // client id setup in IdentityServer4
+    responseType: 'code', //code flow PKCE
+    // redirectUri: window.location.origin + '/auth-callback',
+    redirectUri: window.location.origin,
+    postLogoutRedirectUri: window.location.origin,
+    silentRefreshRedirectUri: window.location.origin + '/silent-refresh.html',
+    scope: 'openid profile email roles app.api.employeeprofile.read', // Ask offline_access to support refresh token refreshes
+    // scope: 'openid profile email api', // Ask offline_access to support refresh token refreshes
+    useSilentRefresh: true, // Needed for Code Flow to suggest using iframe-based refreshes
+    silentRefreshTimeout: 50000, // For faster testing
+    timeoutFactor: 0.25, // For faster testing
+    sessionChecksEnabled: false,
+    showDebugInformation: false, // Also requires enabling "Verbose" level in devtools
+    clearHashAfterLogin: false, // https://github.com/manfredsteyer/angular-oauth2-oidc/issues/457#issuecomment-431807040,
+    nonceStateSeparator: 'semicolon', // Real semicolon gets mangled by IdentityServer's URI encoding
+  },
+
 };
+
 
 /*
  * For easier debugging in development mode, you can import the following file

@@ -8,7 +8,7 @@
       "skipQuickstart": false,
       "initGit": true,
       "usePrefix": true,
-      "appName": "AngularIdentityServer",
+      "appName": "Talent Management",
       "target": ["web"],
       "ui": "bootstrap",
       "features": ["pwa", "auth", "lazy", "cypress", "angulartics"],
