@@ -14,7 +14,7 @@ const routes: Routes = [
   ]),
   Shell.childRoutes([
     {
-      path: 'authorize',
+      path: 'employee',
       loadChildren: () => import('./features/employee/employee.module').then((m) => m.EmployeeModule),
     },
     {
