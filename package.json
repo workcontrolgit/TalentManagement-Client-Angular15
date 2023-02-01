@@ -1,5 +1,5 @@
 {
-  "name": "angular-14",
+  "name": "angular-15",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -10,10 +10,10 @@
     "serve:sw": "npm run build -s && npx http-server ./dist -p 4200",
     "lint": "ng lint && stylelint \"src/**/*.scss\"",
     "test": "npm run write:env -s && ng test",
-    "test:ci": "npm run write:env -s && npm run lint -s && ng run angular-14:test:ci",
+    "test:ci": "npm run write:env -s && npm run lint -s && ng run angular-15:test:ci",
     "e2e": "npm run write:env -s && ng e2e",
-    "cypress:open": "npm run write:env -s && ng run angular-14:cypress-open",
-    "cypress:run": "npm run write:env -s && ng run angular-14:cypress-run",
+    "cypress:open": "npm run write:env -s && ng run angular-15:cypress-open",
+    "cypress:run": "npm run write:env -s && ng run angular-15:cypress-run",
     "translations:extract": "ngx-translate-extract --input ./src --output ./src/translations/template.json --format=json --clean --sort",
     "docs": "hads ./docs -o",
     "write:env": "ngx-scripts env npm_package_version",

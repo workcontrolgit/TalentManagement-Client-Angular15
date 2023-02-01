@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-14": {
+    "angular-15": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -85,10 +85,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "angular-14:build:production"
+              "browserTarget": "angular-15:build:production"
             },
             "development": {
-              "browserTarget": "angular-14:build:development"
+              "browserTarget": "angular-15:build:development"
             },
             "ci": {
               "progress": false
@@ -99,7 +99,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-14:build"
+            "browserTarget": "angular-15:build"
           }
         },
         "test": {
@@ -140,11 +140,11 @@
         "cypress-run": {
           "builder": "@cypress/schematic:cypress",
           "options": {
-            "devServerTarget": "angular-14:serve"
+            "devServerTarget": "angular-15:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "angular-14:serve:production"
+              "devServerTarget": "angular-15:serve:production"
             }
           }
         },
@@ -158,11 +158,11 @@
         "e2e": {
           "builder": "@cypress/schematic:cypress",
           "options": {
-            "devServerTarget": "angular-14:serve"
+            "devServerTarget": "angular-15:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "angular-14:serve:production"
+              "devServerTarget": "angular-15:serve:production"
             }
           }
         },
@@ -172,5 +172,5 @@
       }
     }
   },
-  "defaultProject": "angular-14"
+  "defaultProject": "angular-15"
 }
