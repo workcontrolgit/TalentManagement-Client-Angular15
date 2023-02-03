@@ -9,9 +9,10 @@ import { ErrorDialogComponent } from './error-dialog/error-dialog.component';
 export class ErrorDialogService {
   constructor(private injector: Injector) {}
 
-  openDialog(message: string, status?: number): void {
+  openDialog(title: string, message: string, status?: string): void {
     var modalService = this.injector.get(NgbModal);
     const modalRef = modalService.open(ErrorDialogComponent);
+    modalRef.componentInstance.title = title;
     modalRef.componentInstance.message = message;
     modalRef.componentInstance.status = status;
   }
