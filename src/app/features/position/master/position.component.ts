@@ -5,6 +5,8 @@ import { ApiHttpService } from '@app/services/api/api-http.service';
 import { ApiEndpointsService } from '@app/services/api/api-endpoints.service';
 import { DataTablesResponse } from '@shared/classes/data-tables-response';
 import { Logger } from '@app/core';
+import { finalize } from 'rxjs/operators';
+
 
 const log = new Logger('Position');
 @Component({
@@ -24,6 +26,7 @@ export class PositionComponent implements OnInit {
   }
 
   ngOnInit() {
+
     this.dtOptions = {
       pagingType: 'full_numbers',
       pageLength: 10,

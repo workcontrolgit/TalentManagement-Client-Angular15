@@ -3,8 +3,6 @@ import { Injectable } from '@angular/core';
 // Application Classes
 import { UrlBuilder } from '@shared/classes/url-builder';
 import { QueryStringParameters } from '@shared/classes/query-string-parameters';
-// Application Constants
-// import { Constants } from '@app/config/constants';
 
 import { environment } from '@env/environment';
 
@@ -53,16 +51,6 @@ export class ApiEndpointsService {
 
   // call Mock endpoint
   // https://angular-datatables-demo-server.herokuapp.com
-
-  // call Evaluations endpoint
-  public getEvaluationByIdEndpoint = (id: string): string => this.createUrlWithPathVariables('Evaluations', [id]);
-
-  public getEvaluationByPlayerIdAndSkillLevelEndpoint(playerId: string, skillLevel: string): string {
-    return this.createUrlWithQueryParameters('Evaluations', (qs: QueryStringParameters) => {
-      qs.push('PlayerId', playerId);
-      qs.push('SkillLevel', skillLevel);
-    });
-  }
 
   // call Positions endpoint
 

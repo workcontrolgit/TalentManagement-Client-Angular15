@@ -6,7 +6,7 @@ import { catchError } from 'rxjs/operators';
 import { environment } from '@env/environment';
 import { Logger } from '../logger.service';
 import { ToastService } from '@app/services/toast/toast.service';
-
+import { ErrorDialogService } from '@shared/errors/error-dialog.service';
 
 const log = new Logger('ErrorHandlerInterceptor');
 
@@ -17,10 +17,7 @@ const log = new Logger('ErrorHandlerInterceptor');
   providedIn: 'root',
 })
 export class ErrorHandlerInterceptor implements HttpInterceptor {
-
-  constructor(
-    public toastService: ToastService,
-  ) { }
+  constructor(public toastService: ToastService, private errorDialogService: ErrorDialogService) {}
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     return next.handle(request).pipe(catchError((response: HttpErrorResponse) => this.errorHandler(response)));
@@ -28,23 +25,32 @@ export class ErrorHandlerInterceptor implements HttpInterceptor {
 
   // Customize the default error handler here if needed
   private errorHandler(response: HttpErrorResponse): Observable<HttpEvent<any>> {
-    let errorTitle = 'Oops!';
-    let errorMsg = 'System error';
-  if (!environment.production) {
+    let errorTitle = 'System error!';
+    let errorMsg = 'Please contact system administrator';
+    // show detail error in development
+    if (!environment.production) {
       if (response.error instanceof ErrorEvent) {
         log.error('This is client side error');
         errorTitle = `Client-side error`;
         errorMsg = `Error: ${response.error.message}`;
         log.error(errorMsg);
+        this.showDiaglog(errorTitle, errorMsg);
       } else {
         log.error('This is server side error');
         errorTitle = `Server-side error`;
-        errorMsg = `Error Code: ${response.status},  Message: ${response.message}`;
+        errorMsg = `${response.message}`;
         log.error(errorMsg);
+        this.showDiaglog(errorTitle, errorMsg, response.status.toString());
+      }
     }
+    else
+    // show generic error in production
+    {
       // Do something with the error
       this.showToaster(errorTitle, errorMsg);
+
     }
+
     throw response;
   }
   // ngbmodal service
@@ -55,5 +61,10 @@ export class ErrorHandlerInterceptor implements HttpInterceptor {
       autohide: true,
       headertext: title,
     });
+  }
+
+  // error dialog service
+  showDiaglog(title: string, message: string, status?: string) {
+    this.errorDialogService.openDialog(title, message, status);
   }
 }

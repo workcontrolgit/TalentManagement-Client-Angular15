@@ -18,7 +18,7 @@
       "tools": ["prettier", "hads"],
       "utility": ["moment"],
       "deploy": "github",
-      "projectName": "angular-15",
+      "projectName": "TalentManagement",
       "packageManager": "npm",
       "mobile": [],
       "desktop": [],
