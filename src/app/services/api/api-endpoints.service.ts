@@ -12,9 +12,10 @@ import { environment } from '@env/environment';
 
 // Returns the api endpoints urls to use in services in a consistent way
 export class ApiEndpointsService {
-  constructor() {} //private constants: Constants // Application Constants
+  constructor() {}
 
-  /* #region EXAMPLES */
+  // Call API technique https://medium.com/better-programming/angular-api-calls-the-right-way-264198bf2c64
+  // EXAMPLES
   public getDataByIdEndpoint = (id: string): string => this.createUrlWithPathVariables('data', [id]);
 
   public getDataByIdAndCodeEndpoint = (id: string, code: number): string =>
@@ -47,28 +48,19 @@ export class ApiEndpointsService {
   // call regular endpoint without boolean true at end
   public getPersonsEndpoint = (): string => this.createUrl('Persons');
 
-  // Call API technique https://medium.com/better-programming/angular-api-calls-the-right-way-264198bf2c64
+  /* #end region EXAMPLES */
 
-  // call Mock endpoint
-  // https://angular-datatables-demo-server.herokuapp.com
 
+  // TALENT MANAGEMENT
   // call Positions endpoint
-
   public getPositionByIdEndpoint = (id: string): string => this.createUrlWithPathVariables('Positions', [id]);
-
   public deletePositionByIdEndpoint = (id: string): string => this.createUrlWithPathVariables('Positions', [id]);
-
-  public postPersonsEndpoint = (): string => this.createUrl('', true);
-
-  // call regular endpoint without boolean true at end
-  // https://localhost:44378/api/v1 (ASP.NET CORE REST API.  Repo https://github.com/workcontrolgit/AngularNgxDataTableBackend)
   public postPositionsPagedEndpoint = (): string => this.createUrl('Positions/Paged');
-
   public postPositionsEndpoint = (): string => this.createUrl('Positions');
-
   public putPositionsPagedEndpoint = (id: string): string => this.createUrlWithPathVariables('Positions', [id]);
+  // call Employees endpoint
+  public postEmployeesPagedEndpoint = (): string => this.createUrl('Employees/Paged');
 
-  /* #endregion */
 
   /* #region URL CREATOR */
   // URL
@@ -105,5 +97,4 @@ export class ApiEndpointsService {
     const urlBuilder: UrlBuilder = new UrlBuilder(environment.apiEndpoint, `${action}${encodedPathVariablesUrl}`);
     return urlBuilder.toString();
   }
-  /* #endregion */
 }

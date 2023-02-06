@@ -4,9 +4,10 @@ import { UntypedFormGroup, UntypedFormBuilder, Validators } from '@angular/forms
 import { Logger } from '@app/core';
 import { ApiHttpService } from '@app/services/api/api-http.service';
 import { ApiEndpointsService } from '@app/services/api/api-endpoints.service';
-import { Position } from '@shared/models/position';
-import { DataResponsePosition } from '@shared/classes/data-response-position';
-import { ConfirmationDialogService } from '@app/services/dialog/confirmation-dialog.service';
+import { Position } from '@app/@shared/interfaces/position';
+import { DataResponsePosition } from '@app/@shared/interfaces/data-response-position';
+import { ModalService } from '@app/services/modal/modal.service';
+
 import { RxwebValidators } from '@rxweb/reactive-form-validators';
 import { ToastService } from '@app/services/toast/toast.service';
 
@@ -33,7 +34,7 @@ export class DetailComponent implements OnInit {
     private formBuilder: UntypedFormBuilder,
     private apiHttpService: ApiHttpService,
     private apiEndpointsService: ApiEndpointsService,
-    private confirmationDialogService: ConfirmationDialogService,
+    private modalService: ModalService,
   ) {
     this.createForm();
   }
@@ -67,10 +68,10 @@ export class DetailComponent implements OnInit {
 
   // Handle Delete button click
   onDelete() {
-    this.confirmationDialogService
-      .confirm('Position deletion', 'Are you sure you want to delete?')
-      .then((confirmed) => {
-        if (confirmed) {
+    this.modalService
+      .OpenConfirmDialog('Position deletion', 'Are you sure you want to delete?')
+      .then((Yes) => {
+        if (Yes) {
           this.delete(this.entryForm.get('id')!.value);
           log.debug('onDelete: ', this.entryForm.value);
         }
