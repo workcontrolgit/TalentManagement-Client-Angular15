@@ -6,7 +6,7 @@ import { SharedModule } from '@shared';
 import { PositionRoutingModule } from './position-routing.module';
 import { PositionComponent } from './position.component';
 import { PositionListComponent } from './list/position-list.component';
-import { DetailComponent } from './detail/detail.component';
+import { PositionDetailComponent } from './detail/position-detail.component';
 
 import { ReactiveFormsModule } from '@angular/forms';
 import { RxReactiveFormsModule } from '@rxweb/reactive-form-validators';
@@ -14,7 +14,7 @@ import { RxReactiveFormsModule } from '@rxweb/reactive-form-validators';
 import { DataTablesModule } from 'angular-datatables';
 
 @NgModule({
-  declarations: [PositionComponent, PositionListComponent, DetailComponent],
+  declarations: [PositionComponent, PositionListComponent, PositionDetailComponent],
   imports: [
     CommonModule,
     TranslateModule,

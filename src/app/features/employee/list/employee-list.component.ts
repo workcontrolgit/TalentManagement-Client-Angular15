@@ -1,13 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Employee } from '@app/@shared/interfaces/employee';
+import { Employee } from '@shared/interfaces/employee';
 import { ApiHttpService } from '@app/services/api/api-http.service';
 import { ApiEndpointsService } from '@app/services/api/api-endpoints.service';
 import { DataTablesResponse } from '@shared/interfaces/data-tables-response';
+import { ModalService } from '@app/services/modal/modal.service';
+
 import { Logger } from '@app/core';
 
 
 const log = new Logger('Employee');
+
 @Component({
   selector: 'app-employee-list',
   templateUrl: './employee-list.component.html',
@@ -18,9 +21,20 @@ export class EmployeeListComponent implements OnInit {
   employees: Employee[] = [];
   message = '';
 
-  constructor(private apiHttpService: ApiHttpService, private apiEndpointsService: ApiEndpointsService) {}
+  constructor(
+    private apiHttpService: ApiHttpService,
+    private apiEndpointsService: ApiEndpointsService,
+    private modalService: ModalService,
+    ) {}
 
   wholeRowClick(employee: Employee): void {
+
+    let errorTitle = 'Employee Detail';
+    let errorMsg = 'Please contact system administrator';
+
+
+    this.openModal(errorTitle, employee);
+
     log.debug('Whole row clicked.', employee);
   }
 
@@ -64,5 +78,9 @@ export class EmployeeListComponent implements OnInit {
         },
       ],
     };
+  }
+
+  openModal(title: string, employee: Employee, status?: string) {
+    this.modalService.OpenEmployeeDetailDialog(title, employee, status);
   }
 }

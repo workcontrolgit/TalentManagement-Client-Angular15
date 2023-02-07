@@ -4,8 +4,8 @@ import { UntypedFormGroup, UntypedFormBuilder, Validators } from '@angular/forms
 import { Logger } from '@app/core';
 import { ApiHttpService } from '@app/services/api/api-http.service';
 import { ApiEndpointsService } from '@app/services/api/api-endpoints.service';
-import { Position } from '@app/@shared/interfaces/position';
-import { DataResponsePosition } from '@app/@shared/interfaces/data-response-position';
+import { Position } from '@shared/interfaces/position';
+import { DataResponsePosition } from '@shared/interfaces/data-response-position';
 import { ModalService } from '@app/services/modal/modal.service';
 
 import { RxwebValidators } from '@rxweb/reactive-form-validators';
@@ -16,10 +16,10 @@ const log = new Logger('Detail');
 
 @Component({
   selector: 'app-detail',
-  templateUrl: './detail.component.html',
-  styleUrls: ['./detail.component.scss'],
+  templateUrl: './position-detail.component.html',
+  styleUrls: ['./position-detail.component.scss'],
 })
-export class DetailComponent implements OnInit {
+export class PositionDetailComponent implements OnInit {
   formMode = 'New';
   sub: any;
   id: any;
@@ -29,7 +29,7 @@ export class DetailComponent implements OnInit {
   isAddNew: boolean = false;
 
   constructor(
-    public toastService: ToastService,
+    private toastService: ToastService,
     private route: ActivatedRoute,
     private formBuilder: UntypedFormBuilder,
     private apiHttpService: ApiHttpService,
@@ -143,13 +143,12 @@ export class DetailComponent implements OnInit {
     });
   }
 
-  // ngbmodal service
+  // call modal service
   showToaster(title: string, message: string) {
     this.toastService.show(title, message, {
-      classname: 'bg-danger text-light',
+      classname: 'bg-success text-light',
       delay: 2000,
-      autohide: true,
-      headertext: title,
+      autohide: true
     });
   }
 

@@ -1,4 +1,4 @@
-import { Position } from '@app/@shared/interfaces/position';
+import { Position } from '@shared/interfaces/position';
 
 export interface DataResponsePosition {
   succeeded: boolean;
