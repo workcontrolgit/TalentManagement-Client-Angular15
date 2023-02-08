@@ -10,7 +10,7 @@ const routes: Routes = [
   {
     path: '',
     component: EmployeeComponent,
-    data: { title: marker('Authorize') },
+    data: { title: marker('Employee') },
   },
 ];
 
@@ -19,4 +19,4 @@ const routes: Routes = [
   exports: [RouterModule],
   providers: [],
 })
-export class AuthorizeRoutingModule {}
+export class EmployeeRoutingModule {}

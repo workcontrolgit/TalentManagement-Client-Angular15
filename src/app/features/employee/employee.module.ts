@@ -7,11 +7,11 @@ import { DataTablesModule } from 'angular-datatables';
 
 import { EmployeeComponent } from './employee.component';
 import { EmployeeListComponent } from './list/employee-list.component';
-import { AuthorizeRoutingModule } from './employee-routing.module';
+import { EmployeeRoutingModule } from './employee-routing.module';
 import { NgbNavModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
-  imports: [CommonModule, AuthorizeRoutingModule, NgbNavModule, TranslateModule, SharedModule, DataTablesModule],
+  imports: [CommonModule, EmployeeRoutingModule, NgbNavModule, TranslateModule, SharedModule, DataTablesModule],
   declarations: [EmployeeComponent, EmployeeListComponent],
 })
 export class EmployeeModule {}
