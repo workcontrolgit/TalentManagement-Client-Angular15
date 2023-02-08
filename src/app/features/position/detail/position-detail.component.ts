@@ -4,9 +4,10 @@ import { UntypedFormGroup, UntypedFormBuilder, Validators } from '@angular/forms
 import { Logger } from '@app/core';
 import { ApiHttpService } from '@app/services/api/api-http.service';
 import { ApiEndpointsService } from '@app/services/api/api-endpoints.service';
-import { Position } from '@shared/models/position';
-import { DataResponsePosition } from '@shared/classes/data-response-position';
-import { ConfirmationDialogService } from '@app/services/dialog/confirmation-dialog.service';
+import { Position } from '@shared/interfaces/position';
+import { DataResponsePosition } from '@shared/interfaces/data-response-position';
+import { ModalService } from '@app/services/modal/modal.service';
+
 import { RxwebValidators } from '@rxweb/reactive-form-validators';
 import { ToastService } from '@app/services/toast/toast.service';
 
@@ -15,10 +16,10 @@ const log = new Logger('Detail');
 
 @Component({
   selector: 'app-detail',
-  templateUrl: './detail.component.html',
-  styleUrls: ['./detail.component.scss'],
+  templateUrl: './position-detail.component.html',
+  styleUrls: ['./position-detail.component.scss'],
 })
-export class DetailComponent implements OnInit {
+export class PositionDetailComponent implements OnInit {
   formMode = 'New';
   sub: any;
   id: any;
@@ -28,12 +29,12 @@ export class DetailComponent implements OnInit {
   isAddNew: boolean = false;
 
   constructor(
-    public toastService: ToastService,
+    private toastService: ToastService,
     private route: ActivatedRoute,
     private formBuilder: UntypedFormBuilder,
     private apiHttpService: ApiHttpService,
     private apiEndpointsService: ApiEndpointsService,
-    private confirmationDialogService: ConfirmationDialogService,
+    private modalService: ModalService,
   ) {
     this.createForm();
   }
@@ -67,10 +68,10 @@ export class DetailComponent implements OnInit {
 
   // Handle Delete button click
   onDelete() {
-    this.confirmationDialogService
-      .confirm('Position deletion', 'Are you sure you want to delete?')
-      .then((confirmed) => {
-        if (confirmed) {
+    this.modalService
+      .OpenConfirmDialog('Position deletion', 'Are you sure you want to delete?')
+      .then((Yes) => {
+        if (Yes) {
           this.delete(this.entryForm.get('id')!.value);
           log.debug('onDelete: ', this.entryForm.value);
         }
@@ -142,13 +143,12 @@ export class DetailComponent implements OnInit {
     });
   }
 
-  // ngbmodal service
+  // call modal service
   showToaster(title: string, message: string) {
     this.toastService.show(title, message, {
-      classname: 'bg-danger text-light',
+      classname: 'bg-success text-light',
       delay: 2000,
-      autohide: true,
-      headertext: title,
+      autohide: true
     });
   }
 

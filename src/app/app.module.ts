@@ -16,7 +16,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { ShouldLoginComponent } from './should-login.component';
 
 import { CoreModule } from '@app/core';
-import { ToastsContainer } from './services/toast/toasts-container.component';
+import { ToastsContainer } from './@shared/toast/toasts-container.component';
 
 @NgModule({
   imports: [

@@ -1,0 +1,37 @@
+<div class="container-fluid">
+  <div class="card">
+    <div class="card-header">
+      <div class="float-start">
+        <h3 class="text-secondary">Employee</h3>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <table datatable [dtOptions]="dtOptions" class="table table-hover">
+          <thead>
+            <tr>
+              <th>Last</th>
+              <th>First</th>
+              <th>Title</th>
+              <th>Email</th>
+            </tr>
+          </thead>
+          <tbody *ngIf="employees?.length !== 0">
+            <tr *ngFor="let employee of employees" (click)="wholeRowClick(employee)">
+              <td>{{ employee.lastName }}</td>
+              <td>{{ employee.firstName }}</td>
+              <td>{{ employee.employeeTitle }}</td>
+              <td>{{ employee.email }}</td>
+            </tr>
+          </tbody>
+          <tbody *ngIf="employees?.length === 0">
+            <tr>
+              <td colspan="3" class="no-data-available">No data!</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+        </div>
+    <div class="card-footer">Hint: Searchable columns are Number, Title and Description</div>
+  </div>
+</div>

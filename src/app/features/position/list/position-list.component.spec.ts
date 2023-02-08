@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PositionComponent } from './position.component';
+import { PositionComponent } from './position-list.component';
 
 describe('PositionComponent', () => {
   let component: PositionComponent;

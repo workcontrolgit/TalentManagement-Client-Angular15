@@ -1,27 +1,38 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
-import { Position } from '@shared/models/position';
+import { Position } from '@shared/interfaces/position';
 import { ApiHttpService } from '@app/services/api/api-http.service';
 import { ApiEndpointsService } from '@app/services/api/api-endpoints.service';
-import { DataTablesResponse } from '@shared/classes/data-tables-response';
+import { DataTablesResponse } from '@shared/interfaces/data-tables-response';
 import { Logger } from '@app/core';
-import { finalize } from 'rxjs/operators';
+
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { switchMap } from 'rxjs/operators';
 
 
 const log = new Logger('Position');
 @Component({
-  selector: 'app-position',
-  templateUrl: './position.component.html',
-  styleUrls: ['./position.component.scss'],
+  selector: 'app-position-list',
+  templateUrl: './position-list.component.html',
+  styleUrls: ['./position-list.component.scss'],
 })
-export class PositionComponent implements OnInit {
+export class PositionListComponent implements OnInit {
   dtOptions: DataTables.Settings = {};
   positions: Position[] = [];
   message = '';
 
-  constructor(private apiHttpService: ApiHttpService, private apiEndpointsService: ApiEndpointsService) {}
+  constructor(
+    private apiHttpService: ApiHttpService,
+    private apiEndpointsService: ApiEndpointsService,
+    private router: Router,
+    ) {}
 
   wholeRowClick(position: Position): void {
+    // get record id
+    const positionId = position ? position.id : null;
+    // load detail component
+    this.router.navigate(['/position/detail', { id: positionId }]);
+
     log.debug('Whole row clicked.', position);
   }
 
@@ -33,8 +44,6 @@ export class PositionComponent implements OnInit {
       serverSide: true,
       processing: true,
       ajax: (dataTablesParameters: any, callback) => {
-        //TODO Load from Akita
-        //dataTablesParameters.start = 20;
         // Call WebAPI to get positions
         this.apiHttpService
           .post(this.apiEndpointsService.postPositionsPagedEndpoint(), dataTablesParameters)
