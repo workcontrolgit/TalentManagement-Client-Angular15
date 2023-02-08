@@ -1,0 +1,21 @@
+<div class="modal-header">
+  <h4 class="modal-title">{{ title }}</h4>
+  <button type="button" class="close" aria-label="Close" (click)="this.activeModal.dismiss()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <p class="card-text"><strong>id: </strong> {{ employee.id }}</p>
+  <p class="card-text"><strong>lastName: </strong> {{ employee.lastName }}</p>
+  <p class="card-text"><strong>firstName: </strong> {{ employee.firstName }}</p>
+  <p class="card-text"><strong>employeeTitle: </strong> {{ employee.employeeTitle }}</p>
+  <p class="card-text"><strong>email: </strong> {{ employee.email }}</p>
+  <p class="card-text"><strong>phone: </strong> {{ employee.phone }}</p>
+  <p class="card-text"><strong>dob: </strong> {{ employee.dob }}</p>
+  <p class="card-text"><strong>gender: </strong> {{ employee.gender }}</p>
+  <p class="card-text"><strong>employeeNumber: </strong> {{ employee.employeeNumber }}</p>
+  <p class="card-text"><strong>suffix: </strong> {{ employee.suffix }}</p>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-primary" (click)="this.activeModal.dismiss()">Close</button>
+</div>

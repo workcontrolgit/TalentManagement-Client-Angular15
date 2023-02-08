@@ -8,7 +8,7 @@
       </div>
     </div>
     <div class="card-body">
-      <table datatable [dtOptions]="dtOptions" class="table table-bordered">
+      <table datatable [dtOptions]="dtOptions" class="table table-hover">
         <thead>
           <tr>
             <th>Position Number</th>
@@ -21,7 +21,8 @@
           <tr *ngFor="let position of positions" (click)="wholeRowClick(position)">
             <td>
               <!-- Hyperlink position number with routerLink and position Id parameter -->
-              <a [routerLink]="['/position/detail', position.id]">{{ position.positionNumber }}</a>
+              <!-- <a class="text-decoration-none" [routerLink]="['/position/detail', position.id]">{{ position.positionNumber }}</a> -->
+              {{ position.positionNumber }}
             </td>
             <td>{{ position.positionTitle }}</td>
             <td>{{ position.positionDescription }}</td>
