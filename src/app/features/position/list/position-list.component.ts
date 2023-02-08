@@ -28,7 +28,9 @@ export class PositionListComponent implements OnInit {
     ) {}
 
   wholeRowClick(position: Position): void {
+    // get record id
     const positionId = position ? position.id : null;
+    // load detail component
     this.router.navigate(['/position/detail', { id: positionId }]);
 
     log.debug('Whole row clicked.', position);
