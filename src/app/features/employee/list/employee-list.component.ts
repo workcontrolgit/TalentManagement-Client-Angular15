@@ -29,11 +29,9 @@ export class EmployeeListComponent implements OnInit {
 
   wholeRowClick(employee: Employee): void {
 
-    let errorTitle = 'Employee Detail';
-    let errorMsg = 'Please contact system administrator';
+    let modalTitle = 'Employee Detail';
 
-
-    this.openModal(errorTitle, employee);
+    this.openModal(modalTitle, employee);
 
     log.debug('Whole row clicked.', employee);
   }
@@ -80,7 +78,7 @@ export class EmployeeListComponent implements OnInit {
     };
   }
 
-  openModal(title: string, employee: Employee, status?: string) {
-    this.modalService.OpenEmployeeDetailDialog(title, employee, status);
+  openModal(title: string, employee: Employee) {
+    this.modalService.OpenEmployeeDetailDialog(title, employee);
   }
 }
