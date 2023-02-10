@@ -16,12 +16,11 @@ export class ModalService {
 
   constructor(private injector: Injector) {}
 
-  OpenEmployeeDetailDialog(title: string, employee: Employee, status?: string): void {
+  OpenEmployeeDetailDialog(title: string, employee: Employee): void {
     //var modalService = this.injector.get(NgbModal);
     const modalRef = this.modalService.open(EmployeeDetailComponent);
     modalRef.componentInstance.title = title;
     modalRef.componentInstance.employee = employee;
-    modalRef.componentInstance.status = status;
   }
 
 

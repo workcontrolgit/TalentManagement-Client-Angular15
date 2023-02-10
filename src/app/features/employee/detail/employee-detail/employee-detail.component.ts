@@ -10,7 +10,6 @@ import { Employee } from '@shared/interfaces/employee';
 export class EmployeeDetailComponent implements OnInit {
   @Input() title: string = 'Employee Detail';
   @Input() employee!: Employee;
-  @Input() status!: string;
 
   constructor(public activeModal: NgbActiveModal) {}
 
