@@ -8,7 +8,7 @@ const routes: Routes = [
   Shell.childRoutes([
     {
       path: 'about',
-      canActivate: [AuthGuard],
+      // canActivate: [AuthGuard],
       loadChildren: () => import('./about/about.module').then((m) => m.AboutModule),
     },
   ]),
@@ -19,8 +19,8 @@ const routes: Routes = [
     },
     {
       path: 'position',
+      canActivate: [AuthGuard],
       loadChildren: () => import('./features/position/position.module').then((m) => m.PositionModule),
-      //data: {role: 'Manager'},
     },
 
   ]),
