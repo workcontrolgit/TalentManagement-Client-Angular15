@@ -7,8 +7,6 @@ import { AuthService } from './auth.service';
 import { ToastService } from '@app/services/toast/toast.service';
 import { Logger } from '@app/core';
 
-//const log = new Logger('auth-guard.service');
-
 @Injectable()
 export class AuthGuard implements CanActivate {
   profile: any;
@@ -20,7 +18,6 @@ export class AuthGuard implements CanActivate {
         if (canActivateProtectedRoutes) {
           return true;
         }
-        //log.debug('Access denied', 'Please login to continue access');
         console.log('Access denied', 'Please login to continue access');
         this.showToaster('Access denied', 'Please login to continue access');
         return false;
