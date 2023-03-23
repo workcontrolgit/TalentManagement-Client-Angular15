@@ -20,7 +20,6 @@ const routes: Routes = [
     },
     {
       path: 'position',
-      canActivate: [AuthGuard],
       loadChildren: () => import('./features/position/position.module').then((m) => m.PositionModule),
     },
 

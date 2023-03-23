@@ -10,21 +10,22 @@ const routes: Routes = [
   {
     path: '',
     component: PositionListComponent,
+    canActivate: [AuthGuard],
     data: { title: marker('Position')},
   },
   {
     path: 'detail',
     component: PositionDetailComponent,
-    canActivate: [RoleGuard],
-    data: { title: marker('Position Detail'),
-    role: 'HrAdmin' },
+    canActivate: [AuthGuard, RoleGuard],
+    data: { title: marker('Position New'),
+    role: 'HRAdmin' },
   },
   {
     path: 'detail/:id',
     component: PositionDetailComponent,
-    canActivate: [RoleGuard],
+    canActivate: [AuthGuard, RoleGuard],
     data: { title: marker('Position Detail'),
-    role: 'HrAdmin' },
+    role: 'HRAdmin' },
   },
 ];
 
