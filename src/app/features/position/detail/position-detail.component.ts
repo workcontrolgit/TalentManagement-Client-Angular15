@@ -11,7 +11,6 @@ import { ModalService } from '@app/services/modal/modal.service';
 import { RxwebValidators } from '@rxweb/reactive-form-validators';
 import { ToastService } from '@app/services/toast/toast.service';
 
-
 const log = new Logger('Detail');
 
 @Component({
@@ -34,7 +33,7 @@ export class PositionDetailComponent implements OnInit {
     private formBuilder: UntypedFormBuilder,
     private apiHttpService: ApiHttpService,
     private apiEndpointsService: ApiEndpointsService,
-    private modalService: ModalService,
+    private modalService: ModalService
   ) {
     this.createForm();
   }
@@ -148,8 +147,7 @@ export class PositionDetailComponent implements OnInit {
     this.toastService.show(title, message, {
       classname: 'bg-success text-light',
       delay: 2000,
-      autohide: true
+      autohide: true,
     });
   }
-
 }

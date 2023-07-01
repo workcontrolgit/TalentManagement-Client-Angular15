@@ -4,7 +4,6 @@ import { TranslateModule } from '@ngx-translate/core';
 import { SharedModule } from '@shared';
 import { DataTablesModule } from 'angular-datatables';
 
-
 import { EmployeeComponent } from './employee.component';
 import { EmployeeListComponent } from './list/employee-list.component';
 import { EmployeeRoutingModule } from './employee-routing.module';

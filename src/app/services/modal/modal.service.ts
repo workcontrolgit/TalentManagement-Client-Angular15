@@ -6,8 +6,6 @@ import { ConfirmationDialogComponent } from '@shared/confirmation-dialog/confirm
 import { EmployeeDetailComponent } from '@app/features/employee/detail/employee-detail/employee-detail.component';
 import { Employee } from '@shared/interfaces/employee';
 
-
-
 @Injectable({
   providedIn: 'root',
 })
@@ -22,7 +20,6 @@ export class ModalService {
     modalRef.componentInstance.title = title;
     modalRef.componentInstance.employee = employee;
   }
-
 
   OpenErrorDialog(title: string, message: string, status?: string): void {
     //var modalService = this.injector.get(NgbModal);
@@ -46,6 +43,4 @@ export class ModalService {
     modalRef.componentInstance.btnCancelText = btnCancelText;
     return modalRef.result;
   }
-
-
 }

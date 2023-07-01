@@ -8,7 +8,6 @@ import { ModalService } from '@app/services/modal/modal.service';
 
 import { Logger } from '@app/core';
 
-
 const log = new Logger('Employee');
 
 @Component({
@@ -24,11 +23,10 @@ export class EmployeeListComponent implements OnInit {
   constructor(
     private apiHttpService: ApiHttpService,
     private apiEndpointsService: ApiEndpointsService,
-    private modalService: ModalService,
-    ) {}
+    private modalService: ModalService
+  ) {}
 
   wholeRowClick(employee: Employee): void {
-
     let modalTitle = 'Employee Detail';
 
     this.openModal(modalTitle, employee);
@@ -37,7 +35,6 @@ export class EmployeeListComponent implements OnInit {
   }
 
   ngOnInit() {
-
     this.dtOptions = {
       pagingType: 'full_numbers',
       pageLength: 10,

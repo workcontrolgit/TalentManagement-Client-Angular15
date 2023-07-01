@@ -4,7 +4,6 @@ import { marker } from '@biesbjerg/ngx-translate-extract-marker';
 
 import { EmployeeComponent } from './employee.component';
 
-
 const routes: Routes = [
   // Module is lazy loaded, see app-routing.module.ts
   {

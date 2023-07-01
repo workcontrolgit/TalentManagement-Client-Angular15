@@ -19,7 +19,7 @@ describe('AppComponent', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [RouterTestingModule],
-      declarations: [AppComponent]
+      declarations: [AppComponent],
     });
 
     router = TestBed.get(Router);

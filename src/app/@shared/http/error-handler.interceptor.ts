@@ -43,12 +43,10 @@ export class ErrorHandlerInterceptor implements HttpInterceptor {
         this.openModal(errorTitle, errorMsg, response.status.toString());
       }
     }
-    else
     // show generic error in production
-    {
+    else {
       // Do something with the error
       this.openModal(errorTitle, errorMsg);
-
     }
 
     throw response;
@@ -62,5 +60,4 @@ export class ErrorHandlerInterceptor implements HttpInterceptor {
   openModal(title: string, message: string, status?: string) {
     this.modalService.OpenErrorDialog(title, message, status);
   }
-
 }

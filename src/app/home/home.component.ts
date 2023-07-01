@@ -1,4 +1,4 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { finalize } from 'rxjs/operators';
 
 import { QuoteService } from './quote.service';
@@ -13,9 +13,7 @@ export class HomeComponent implements OnInit {
   quote: string | undefined;
   isLoading = false;
 
-  constructor(
-    private quoteService: QuoteService,
-  ) {}
+  constructor(private quoteService: QuoteService) {}
 
   ngOnInit() {
     this.quoteService
@@ -29,5 +27,4 @@ export class HomeComponent implements OnInit {
         this.quote = quote;
       });
   }
-
 }

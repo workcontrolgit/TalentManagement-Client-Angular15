@@ -5,7 +5,7 @@ import { Employee } from '@shared/interfaces/employee';
 @Component({
   selector: 'app-employee-detail',
   templateUrl: './employee-detail.component.html',
-  styleUrls: ['./employee-detail.component.scss']
+  styleUrls: ['./employee-detail.component.scss'],
 })
 export class EmployeeDetailComponent implements OnInit {
   @Input() title: string = 'Employee Detail';
@@ -13,7 +13,5 @@ export class EmployeeDetailComponent implements OnInit {
 
   constructor(public activeModal: NgbActiveModal) {}
 
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

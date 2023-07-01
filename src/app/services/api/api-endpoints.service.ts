@@ -50,7 +50,6 @@ export class ApiEndpointsService {
 
   /* #end region EXAMPLES */
 
-
   // TALENT MANAGEMENT
   // call Positions endpoint
   public getPositionByIdEndpoint = (id: string): string => this.createUrlWithPathVariables('Positions', [id]);
@@ -60,7 +59,6 @@ export class ApiEndpointsService {
   public putPositionsPagedEndpoint = (id: string): string => this.createUrlWithPathVariables('Positions', [id]);
   // call Employees endpoint
   public postEmployeesPagedEndpoint = (): string => this.createUrl('Employees/Paged');
-
 
   /* #region URL CREATOR */
   // URL

@@ -43,9 +43,7 @@ export const environment = {
     clearHashAfterLogin: false, // https://github.com/manfredsteyer/angular-oauth2-oidc/issues/457#issuecomment-431807040,
     nonceStateSeparator: 'semicolon', // Real semicolon gets mangled by IdentityServer's URI encoding
   },
-
 };
-
 
 /*
  * For easier debugging in development mode, you can import the following file

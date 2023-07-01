@@ -9,7 +9,6 @@ import { Logger } from '@app/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { switchMap } from 'rxjs/operators';
 
-
 const log = new Logger('Position');
 @Component({
   selector: 'app-position-list',
@@ -24,8 +23,8 @@ export class PositionListComponent implements OnInit {
   constructor(
     private apiHttpService: ApiHttpService,
     private apiEndpointsService: ApiEndpointsService,
-    private router: Router,
-    ) {}
+    private router: Router
+  ) {}
 
   wholeRowClick(position: Position): void {
     // get record id
@@ -37,7 +36,6 @@ export class PositionListComponent implements OnInit {
   }
 
   ngOnInit() {
-
     this.dtOptions = {
       pagingType: 'full_numbers',
       pageLength: 10,
